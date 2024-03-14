@@ -49,6 +49,7 @@ class Tekken {
   void fd();
   void fd_1();
   void fd_2();
+  void fd_4();
   void d();
   void bd();
 };

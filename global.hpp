@@ -18,6 +18,15 @@ extern const int FACING_OFFSET;
 extern const int CHARAC_NUM_OFFSET;
 extern const int FRAME_OFFSET;
 
+#define BACK 0x04
+#define DOWN 0x02
+#define FORWARD 0x08
+#define UP 0x01
+#define L_HAND 0x40
+#define R_HAND 0x80
+#define L_KICK 0x10
+#define R_KICK 0x20
+
 #define JMP_POINTER 0x5640F5E
 
 #define JIN 6

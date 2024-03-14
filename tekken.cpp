@@ -139,49 +139,59 @@ void Tekken::startWatchingGstate() {
 void Tekken::startMacro() {
     std::thread t([this]() {
         while (true) {
-            // Q 백대쉬
-            if (is_key_down(0x51)) {
-                b();
-                neutral();
-                bd();
-                neutral();
-                b();
-            }
-
-            if (gstate.charac_num == JIN || gstate.charac_num == DEVIL_JIN) {
-                // E 초풍
-                if (is_key_down(0x45)) {
-                    f();
-                    neutral();
-                    d();
-                    fd_2();
-                }
-
-                // Z 웨이브
-                if (is_key_down(0x5A)) {
-                    f();
-                    neutral();
-                    d();
-                    fd();
-                    f();
-                }
-
-                // F 대초
-                if (is_key_down(0x46)) {
-                    d();
-                    fd_2();
-                }
-            }
-            if (gstate.charac_num == JIN || gstate.charac_num == DEVIL_JIN) {
-                // R 46_2
-                if (is_key_down(0x52)) {
+            if (isForeground) {
+                // Q 백대쉬
+                if (is_key_down(0x51)) {
                     b();
                     neutral();
-                    f_2();
+                    bd();
+                    neutral();
+                    b();
                 }
-            }
 
-            s_sleep(1);
+                if (gstate.charac_num == JIN || gstate.charac_num == DEVIL_JIN) {
+                    // E 초풍
+                    if (is_key_down(0x45)) {
+                        f();
+                        neutral();
+                        d();
+                        fd_2();
+                    }
+
+                    // Z 웨이브
+                    if (is_key_down(0x5A)) {
+                        f();
+                        neutral();
+                        d();
+                        fd();
+                        f();
+                    }
+
+                    // F 대초
+                    if (is_key_down(0x46)) {
+                        d();
+                        fd_2();
+                    }
+
+                    // X 나락
+                    if (is_key_down(0x58)) {
+                        f();
+                        neutral();
+                        d();
+                        fd_4();
+                    }
+                }
+                if (gstate.charac_num == JIN || gstate.charac_num == DEVIL_JIN) {
+                    // R 46_2
+                    if (is_key_down(0x52)) {
+                        b();
+                        neutral();
+                        f_2();
+                    }
+                }
+
+                s_sleep(1);
+            }
         }
     });
 
